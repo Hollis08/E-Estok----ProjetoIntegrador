@@ -17,7 +17,7 @@
         <a href="produto-lista.html" class="btn btn-primary mx-5 mt-2">Lista de Produtos</a>
     </div>
     <div id="formCadastro" class="container mt-5">
-        <form method="post" action="" class="mx-auto mt-3" style="max-width: 600px;">
+        <form id="formProduto" method="post" action="" class="mx-auto mt-3" style="max-width: 600px;">
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="codigoProduto" class="form-label">Código do produto:</label>
@@ -36,14 +36,14 @@
                 </div>
                 <div class="col-md-6">
                     <label for="categoriaProduto" class="form-label">Categoria:</label>
-                    <input type="number" id="categoriaProduto" class="form-control" placeholder="Categoria" />
+                    <input type="text" id="categoriaProduto" class="form-control" placeholder="Categoria" />
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="validadeProduto" class="form-label">Validade:</label>
-                    <input type="number" id="validadeProduto" class="form-control" placeholder="Válidade"/>
+                    <input type="text" id="validadeProduto" class="form-control" placeholder="Validade"/>
                 </div>
                 <div class="col-md-6">
                     <label for="quantidadeProduto" class="form-label">Quantidade:</label>
@@ -58,5 +58,39 @@
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById("formProduto").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const produto = {
+                codigo: document.getElementById("codigoProduto").value,
+                nome: document.getElementById("nomeProduto").value,
+                valor: document.getElementById("valorProduto").value,
+                categoria: document.getElementById("categoriaProduto").value,
+                validade: document.getElementById("validadeProduto").value,
+                quantidade: document.getElementById("quantidadeProduto").value
+            };
+
+            fetch("http://localhost:3000/produtos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(produto)
+            })
+            .then(function(response) {
+                if (!response.ok) throw new Error("Erro na requisição");
+                return response.json();
+            })
+            .then(function(data) {
+                alert("Produto incluido com sucesso!");
+                document.getElementById("formProduto").reset();
+            })
+            .catch(function(error) {
+                console.error("Error: ", error);
+                alert("Erro ao cadastrar produto.");
+            });
+        });
+    </script>
 </body>
 </html>

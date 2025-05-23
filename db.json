@@ -1,16 +1,43 @@
 {
-    "usuarios" : [
-        {
-        "id" : 1,
-        "nome" : "adm",
-        "senha" : "123"
-        } ,
-        {
-            "id" : 2,
-            "nome" : "hollis",
-            "senha" : "321"
-        }
-    ],
-
-    "produtos" : []
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "adm",
+      "senha": "123"
+    },
+    {
+      "id": "2",
+      "nome": "hollis",
+      "senha": "321"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "1",
+      "codigo": "789895",
+      "nome": "Arroz Tio João 1KG",
+      "valor": "5",
+      "categoria": "Alimenticio",
+      "validade": "18/02/2027",
+      "quantidade": "50"
+    },
+    {
+      "id": "2",
+      "codigo": "789895",
+      "nome": "Arroz Tio João 5KG",
+      "valor": "15",
+      "categoria": "Alimenticio",
+      "validade": "18/02/2028",
+      "quantidade": "50"
+    },
+    {
+      "id": "4634",
+      "codigo": "789897",
+      "nome": "Feijão Tio João 1KG",
+      "valor": "6",
+      "categoria": "Alimenticio",
+      "validade": "18/02/2028",
+      "quantidade": "100"
+    }
+  ]
 }
