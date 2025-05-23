@@ -1,0 +1,11 @@
+{
+    "usuario" : [
+        {
+        "id" : 1,
+        "nome" : "adm",
+        "senha" : 123
+        }
+    ],
+
+    "produtos" : []
+}
