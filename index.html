@@ -13,10 +13,10 @@
         </div>
         <div id="divLogin" class="container mt-5">
         <div class="d-flex justify-content-center align-items-center" style="margin-top: 5%;">
-            <form id="formLogin" method="post" action="">
+            <form id="formUsuario" method="post" action="">
                 <div class="mb-3">
                     <label for="usuario">Usuário:</label>
-                    <input type="text" id="usuario" class="form-control" placeholder="Usuário">
+                    <input type="text" id="nome" class="form-control" placeholder="Usuário">
                 </div>
                 <div class="mb-3 ">
                     <label for="senha">Senha:</label>
@@ -28,5 +28,31 @@
             </form>
         </div>
         </div>
+        <script>
+            document.getElementById("formUsuario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const senha = document.getElementById("senha").value;
+
+        fetch(`http://localhost:3000/usuarios?nome=${nome}&senha=${senha}`)
+            .then(function(response) {
+                if (!response.ok) throw new Error("Erro na requisição");
+                return response.json();
+            })
+            .then(function(data) {
+                if (data.length > 0) {
+                    alert("Bem-vindo ao E-Stok, " + nome + "!");
+                    window.location.href = "produto-cadastro.html"; 
+                } else {
+                    alert("Usuário ou senha inválidos");
+                }
+            })
+            .catch(function(error) {
+                console.error("Erro:", error);
+                alert("Erro ao verificar login");
+            });
+        });
+        </script>
     </body>
 </html>

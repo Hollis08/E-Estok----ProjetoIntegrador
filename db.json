@@ -1,9 +1,14 @@
 {
-    "usuario" : [
+    "usuarios" : [
         {
         "id" : 1,
         "nome" : "adm",
-        "senha" : 123
+        "senha" : "123"
+        } ,
+        {
+            "id" : 2,
+            "nome" : "hollis",
+            "senha" : "321"
         }
     ],
 
