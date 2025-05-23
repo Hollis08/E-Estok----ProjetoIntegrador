@@ -24,5 +24,28 @@
             <div id="produtos" class="list-group"></div>
         </div>
         
+        <script>
+        fetch("http://localhost:3000/produtos")
+        .then(response => response.json())
+        .then(produtos => {
+            const lista = document.getElementById("produtos");
+            lista.innerHTML = produtos.map(produto => `
+                <div class="list-group-item">    
+                    <div class=" justify-content-between">
+                        <h5>${produto.nome}</h5>
+                        <div class="row">
+                        <p class="col-md-2">${"<b>Código:</b>" + produto.codigo}</p>
+                        <p class="col-md-2">${"<b>R$</b> "+produto.valor}</p>
+                        <p class="col-md-2">${"<b>Categoria:</b> "+produto.categoria}</p>
+                        <p class="col-md-2">${"<b>Validade:</b> "+produto.validade}</p>
+                        <p class="col-md-2">${"<b>Quantidade:</b> "+produto.quantidade}</p>
+                        </div>
+                    </div>
+                </div>
+                
+            `).join("");
+        })
+        .catch(error => console.error("Erro:", error));
+    </script>
     </body>
 </html>
