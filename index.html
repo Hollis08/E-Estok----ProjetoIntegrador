@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-center align-items-center" style="margin-top: 5%;">
             <form id="formUsuario" method="post" action="">
                 <div class="mb-3">
-                    <label for="usuario">Usuário:</label>
+                    <label for="nome">Usuário:</label>
                     <input type="text" id="nome" class="form-control" placeholder="Usuário">
                 </div>
                 <div class="mb-3 ">
@@ -43,7 +43,8 @@
             .then(function(data) {
                 if (data.length > 0) {
                     alert("Bem-vindo ao E-Stok, " + nome + "!");
-                    window.location.href = "produto-cadastro.html"; 
+                    window.location.href = `pagina-inicial.html?nome=${data[0].nome}`; 
+                    console.log(data[0]);
                 } else {
                     alert("Usuário ou senha inválidos");
                 }
