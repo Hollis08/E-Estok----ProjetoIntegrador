@@ -29,6 +29,15 @@
       "validade": "18/02/2028",
       "quantidade": "80",
       "id": "4634"
+    },
+    {
+      "id": "3001",
+      "codigo": "789896",
+      "nome": "Arroz Tio João 5KG",
+      "valor": "15",
+      "categoria": "Alimenticio",
+      "validade": "18/02/2027",
+      "quantidade": "50"
     }
   ]
 }
