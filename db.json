@@ -22,13 +22,13 @@
       "quantidade": "50"
     },
     {
-      "id": "4634",
       "codigo": "789897",
       "nome": "Feijão Tio João 1KG",
-      "valor": "6",
+      "valor": "4",
       "categoria": "Alimenticio",
       "validade": "18/02/2028",
-      "quantidade": "100"
+      "quantidade": "80",
+      "id": "4634"
     }
   ]
 }
